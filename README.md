@@ -87,7 +87,9 @@ Mentre conviene utilizzare JFact per:
   
 In conclusione se ne deriva che entrambi sono ottimi reasoner da utilizzare.
 
-## Language program 
+# Language program 
   Java 8 
   SDK 5
-  OwlApi 
+ 
+# Resouces
+  OwlApi ---> https://github.com/owlcs/owlapi
