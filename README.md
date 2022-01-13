@@ -75,15 +75,15 @@ Il ragionatore HermiT e del ragionatore JFact hanno entrambi ottime prestazioni 
 della sodisfacibilità di un concetto.
 
 Conviene l’uso di Hermit per:
-   Albero pieno e bilanciato
-   Pochi atomic concept
-   Grandi dimensioni degli alfabeti
-   Per concetti insoddisfacibili
+  - Albero pieno e bilanciato
+  - Pochi atomic concept
+  - Grandi dimensioni degli alfabeti
+  - Per concetti insoddisfacibili
   
 Mentre conviene utilizzare JFact per:
-   Albero pieno con gli operatori: ⱻ , Ɐ
-   Molti atomic concept
-   Piccole dimensioni degli alfabeti
+  - Albero pieno con gli operatori: ⱻ , Ɐ
+  - Molti atomic concept
+  - Piccole dimensioni degli alfabeti
   
 In conclusione se ne deriva che entrambi sono ottimi reasoner da utilizzare.
 
