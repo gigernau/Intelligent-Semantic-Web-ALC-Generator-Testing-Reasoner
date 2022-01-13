@@ -2,40 +2,34 @@
 Intelligent-Semantic-Web-ALC-Generator-Testing-Reasoner 
 
 
-# 1 Introduzione
+# 1) Introduzione
+The following project consists of three main phases:
 
-Il seguente progetto consta di tre fasi principali:
-  - Generazione di un concetto ALC in NNF
-  - Test di soddisfacibilità con reasoner Hermit e JFact
-  - Confronto tra i tempi dei due reasoner
+- Generation of an ***ALC*** concept in Negative Normal Form (***NNF***)
+- Feasibility test with ***Hermit*** and ***JFact*** reasoners
+- Comparison between the times of the two reasoners
 
-Per generare il concetto è richiesta all’utente una percentuale con cui scegliere il grado di
-probabilità che si voglia un concetto soddisfacibile o meno.
-Dopo una prima scelta randomica condizionata dalla probabilità, si avvia la generazione di
-un albero i cui nodi rappresentano i vari operatori di intersezione, unione, complemento,
-restrizione universale ed esistenziale.
-Ricorsivamente si genera ogni livello dell’albero fino alla profondità richiesta.
-Nelle foglie, con una funzione randomica al 50% ,si genera un letterale negato o meno.
-Il tutto è stato implementato con le OWL-API 5.0.3 e il linguaggio Java 8.
-Per testare se un concetto sia o meno soddisfacibile, si è utilizzato il reasoner Hermit messo
-a confronto con i tempi del reasoner JFact.
+To generate the concept, the user is asked for a percentage with which to choose the degree of probability that a satisfactory concept is desired or not.
 
-## 1.2 GUI
+After a first random choice conditioned by probability, a tree is generated whose nodes represent the various operators of intersection, union, complement, universal and existential restriction.
+
+Recursively, each level of the tree is generated up to the required depth. In the leaves, with a random function at 50%, a literal negated or not is generated
+
+All this has been implemented with the OWL-API 5.0.3 and the Java 8 language. To test whether a concept is satisfactory or not, the Hermit reasoner was used compared with the time of the JFact reasoner.
+
+## 1.1 GUI
 
 ![Schermata da 2022-01-13 18-22-30](https://user-images.githubusercontent.com/10176197/149379014-a503ccc4-9622-4c9e-a6e5-14dafe63c9ea.png)
 
-Finestra iniziale in cui l’utente può scegliere se effettuare un singolo test o una batteria
-preimpostata.
+Initial window in which the user can choose whether to perform a single test or a preset battery.
 
 ![Schermata da 2022-01-13 18-22-50](https://user-images.githubusercontent.com/10176197/149379066-33190c5d-4cca-46c4-9032-e0ee2f2aa36b.png)
 
-Finestra di test singolo in cui l’utente può scegliere la profondità dell’albero, la percentuale
-di insoddisfacibilità, il numero di role e concept names, e la distribuzione delle probabilità
-relative a vari operatori.
+Single test window in which the user can choose the depth of the tree, the percentage of dissatisfacibility, the number of roles and concept names, and the distribution of probabilities related to various operators.
 
-# 2 Classi e funzioni
+# 2) Classes and functions
 
-Le classi del progetto sono Main, Menu, InputForm, BatteryTest, SingleTest, Utility.
+The classes of the project are Main, Menu, InputForm, BatteryTest, SingleTest, Utilities.
 
 ## 2.1 CRC Cards
 
@@ -47,45 +41,44 @@ Le classi del progetto sono Main, Menu, InputForm, BatteryTest, SingleTest, Util
 
 ![Schermata da 2022-01-13 18-23-28](https://user-images.githubusercontent.com/10176197/149379387-97a65c41-d3ab-4d5e-817a-bb3ec618a9b9.png)
 
-## 2.2 Funzioni principali
+## 2.2 Main functions
 
 ![Schermata da 2022-01-13 18-23-50](https://user-images.githubusercontent.com/10176197/149380300-bc45f53a-e785-4d77-b748-cd69de7a3cd9.png)
 
-firstChoose: scelta iniziale, tramite probabilità, di generare un
-concetto insoddisfacibile o soddisfacibile.
+***firstChoose:*** initial choice, through probability, to generate an unsatisfiable or satisfying concept.
 
 ![Schermata da 2022-01-13 18-23-58](https://user-images.githubusercontent.com/10176197/149380325-beb4bff0-db8a-4b35-a3c3-dd16da2a4f04.png)
 
-generateSatisfacibleConcept: ricevendo per parametri la
-profondità dell’albero e le percentuali di probabilità di ogni tipo
-operatore, genera un concetto che in maniera randomica, in base
-alle probabilità, ricorsivamente viene scelto il tipo di operatore per
-arrivare fino alle foglie dove vengono generati dei concetti atomici.
+   ***generateSatisfacibleConcept:*** receiving by parameters the depth of the tree and the probability percentages of each operator type, it generates a concept that randomly, based on the probabilities, recursively the type of operator is chosen to get to the leaves where atomic concepts are generated.
 
-# 3 Testing
-## 3.1 Concetti di test
+# 3) Testing
 
-I test effettuati:
-  - Variando la profondità dell’albero
-  - Variando il numero di concept e role name
-  - Variando le probabilità degli operatori
+## 3.1 Case Test 
 
-## 3.2 Conclusioni
-Il ragionatore HermiT e del ragionatore JFact hanno entrambi ottime prestazioni per il controllo
-della sodisfacibilità di un concetto.
+The tests carried out:
 
-Conviene l’uso di Hermit per:
-  - Albero pieno e bilanciato
-  - Pochi atomic concept
-  - Grandi dimensioni degli alfabeti
-  - Per concetti insoddisfacibili
-  
-Mentre conviene utilizzare JFact per:
-  - Albero pieno con gli operatori: ⱻ , Ɐ
-  - Molti atomic concept
-  - Piccole dimensioni degli alfabeti
-  
-In conclusione se ne deriva che entrambi sono ottimi reasoner da utilizzare.
+  - Varying the depth of the tree
+  - Varying the number of concepts and role names
+  - Varying the probabilities of the operators
+
+# 4) Conclusion
+
+The ***HermiT*** reasoner and the ***JFact*** reasoner both have excellent performance for controlling the satisfaction of a concept.
+
+It is advisable to use Hermit for:
+
+  - Full and balanced tree
+  - Few atomic concepts
+  - Large size of alphabets
+  - For unsatisfiable concepts
+
+While it is convenient to use JFact to:
+
+  - Full shaft with operators: ⱻ , Ɐ
+  - Many atomic concepts
+  - Small size of alphabets
+
+To conclude, it follows that both are excellent reasoners to use.
 
 # Language program 
   Java 8 
