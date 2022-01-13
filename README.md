@@ -2,7 +2,7 @@
 Intelligent-Semantic-Web-ALC-Generator-Testing-Reasoner 
 
 
-# 1) Introduzione
+# 1) Intro
 The following project consists of three main phases:
 
 - Generation of an ***ALC*** concept in Negative Normal Form (***NNF***)
