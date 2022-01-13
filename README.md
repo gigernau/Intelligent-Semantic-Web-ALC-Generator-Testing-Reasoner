@@ -3,7 +3,7 @@ Intelligent-Semantic-Web-ALC-Generator-Testing-Reasoner
 
 
 # 1 Introduzione
-## 1.1 Generazione e Test
+
 Il seguente progetto consta di tre fasi principali:
   - Generazione di un concetto ALC in NNF
   - Test di soddisfacibilità con reasoner Hermit e JFact
